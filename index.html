@@ -1211,7 +1211,7 @@ async function viewEdit(id){
         </div>
       </div>
       ${S.config.clientId?`<a class="add-bot-btn" target="_blank" rel="noopener noreferrer"
-        href="https://discord.com/oauth2/authorize?client_id=${esc(S.config.clientId)}&scope=bot&permissions=1&guild_id=${esc(s.guildId)}">${DISCORD_SVG(16)} ${esc(t().addBot)}</a>`:""}
+        href="https://discord.com/oauth2/authorize?client_id=${esc(S.config.clientId)}&scope=bot%20applications.commands&permissions=1&guild_id=${esc(s.guildId)}">${DISCORD_SVG(16)} ${esc(t().addBot)}</a>`:""}
       <button class="dc-view" id="botcheck">${esc(t().botCheck)}</button>
     </div>
     ${!s.botAdded?`<div class="bot-warn" style="margin-bottom:18px"><span class="bw-ic">⚠️</span><span class="bw-tx"><b>${esc(t().addBot)}:</b> ${esc(t().botWarn)}</span></div>`:""}
@@ -1346,7 +1346,7 @@ async function viewDash(){
             ${live?`<button class="dc-view" data-go="/server/${esc(s.guildId)}">${esc(t().viewBtn)}</button>`:""}
             <button class="dc-edit" data-go="/edit/${esc(s.guildId)}">${esc(t().editBtn)}</button>
             ${!s.botAdded&&S.config.clientId?`<a class="dash-invite-btn" target="_blank" rel="noopener noreferrer" style="text-decoration:none"
-              href="https://discord.com/oauth2/authorize?client_id=${esc(S.config.clientId)}&scope=bot&permissions=1&guild_id=${esc(s.guildId)}">${esc(t().addBot)}</a>`:""}
+              href="https://discord.com/oauth2/authorize?client_id=${esc(S.config.clientId)}&scope=bot%20applications.commands&permissions=1&guild_id=${esc(s.guildId)}">${esc(t().addBot)}</a>`:""}
           </div>
           ${!s.botAdded?`<div class="bot-warn"><span class="bw-ic">⚠️</span><span class="bw-tx"><b>${esc(t().addBot)}:</b> ${esc(t().botWarn)}</span></div>`:""}
           ${s.status==="pending"?`<div class="review-note"><span>🔎</span><span>${esc(t().reviewPending)}</span></div>`:""}
